@@ -1,6 +1,5 @@
 from flask import Flask, render_template
 import sqlite3
-from datetime import datetime
 
 app = Flask(
     __name__,
@@ -8,8 +7,6 @@ app = Flask(
     static_folder="static",
     template_folder="templates",
 )
-
-class_active = "active"
 
 
 class Database:
