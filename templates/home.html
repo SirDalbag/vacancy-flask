@@ -1,0 +1,36 @@
+{% extends "components/index.html" %}
+
+{% block main %}
+<div class="container col-xxl-8 px-4 py-5">
+  <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <div class="col-10 col-sm-8 col-lg-6">
+      <img src="{{ url_for('static', filename='src/work.jpg') }}" class="d-block mx-lg-auto img-fluid" width="700" height="500" loading="lazy">
+    </div>
+    <div class="col-lg-6">
+      <h1 class="display-5 fw-bold lh-1 mb-3">Find your dream job</h1>
+      <p class="lead mb-3">Quickly search for job openings and dream jobs, and easily find new workers for organizations. Find your job now, quickly and easily from the comfort of your own home</p>
+      <p class="lead mb-3">Let's find a job quickly and easily!</p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Vacancy</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container px-4 py-4" id="featured-3">
+  <h2 class="pb-2 border-bottom">Our advantages</h2>
+  <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+    <div class="feature col">
+      <h3 class="fs-2 text-body-emphasis">Large selection</h3>
+      <p>Choose a job to your liking from thousands of different vacancies. Closer to home, or maybe remotely? Here you will find everything</p>
+    </div>
+    <div class="feature col">
+      <h3 class="fs-2 text-body-emphasis">Quick resume</h3>
+      <p>Want to create a beautiful and meaningful resume, but don't have the time or lack the knowledge? Our service will help you with this</p>
+    </div>
+    <div class="feature col">
+      <h3 class="fs-2 text-body-emphasis">Convenient filters</h3>
+      <p>Our filters will help you quickly find the best option for you among the thousands offered. Check it out for yourself</p>
+    </div>
+  </div>
+</div>
+{% endblock main %}

@@ -1,0 +1,27 @@
+{% extends "components/index.html" %}
+
+{% block main %}
+<div class="d-flex flex-column flex-md-row p-4 gap-3 py-md-5 align-items-center justify-content-center">
+  <div class="list-group d-flex gap-5">
+    {% for company, address, position, salary, experience, date, img in vacancies %}
+    <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3 border-top" aria-current="true">
+      <img src="{{ url_for('static', filename=img) }}" width="32" height="32" class="rounded-circle flex-shrink-0">
+      <div class="d-flex gap-3 w-100 justify-content-between">
+        <div class="d-flex gap-1 flex-column">
+          <h6>{{ position }}</h6>
+          <h5>{{ "{:,}".format(salary).replace(',', ' ') }} $</h5>
+          <p class="mb-0 opacity-75">{{ company }}</p>
+          <p class="mb-0 opacity-75">{{ address }}</p>
+          <p class="mb-0 opacity-75">Work experience from {{ experience }} years</p>
+          <div class="d-flex gap-3 mt-3 mb-0">
+            <button type="button" class="btn btn-primary">Reply</button>
+            <button type="button" class="btn btn-outline-primary">Learn More</button>
+          </div>
+        </div>
+        <small class="opacity-50 text-nowrap">{{ date }}</small>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock main %}

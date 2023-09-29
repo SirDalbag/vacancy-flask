@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacancy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.css') }}">
+</head>
+<body>
+    <header class="d-flex flex-wrap align-items-center justify-content-around py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+        <img src="{{ url_for('static', filename='src/logo.svg') }}" width="40" height="32">
+      </a>
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="http://127.0.0.1:8000/" class="nav-link px-3 link-dark {% if page == 'home' %} border-bottom border-top {% endif %}">Home</a></li>
+        <li><a href="http://127.0.0.1:8000/vacancy" class="nav-link px-3 link-dark {% if page == 'vacancy' %} border-bottom border-top {% endif %}">Vacancy</a></li>
+      </ul>
+      <div class="col-md-3 text-end">
+        <button type="button" class="btn btn-outline-primary me-2">Login</button>
+        <button type="button" class="btn btn-primary">Sign-up</button>
+      </div>
+    </header>
+    <main class="content">
+      {% block main %}{% endblock main %}
+    </main>
+    <footer class="d-flex flex-wrap justify-content-around align-items-center py-3 my-1 border-top mt-auto">
+      <div class="col-md-5 d-flex align-items-center">
+        <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+          <img src="{{ url_for('static', filename='src/logo.svg') }}" width="30" height="24">
+        </a>
+        <span class="mb-3 mb-md-0 text-body-secondary">© 2023 Vacancy, Inc</span>
+      </div>
+      <ul class="nav col-md-5 justify-content-end list-unstyled d-flex">
+        <li class="ms-3"><a class="text-body-secondary" href="#"><img src="{{ url_for('static', filename='src/twitter.svg') }}" width="24" height="24"></a></li>
+        <li class="ms-3"><a class="text-body-secondary" href="#"><img src="{{ url_for('static', filename='src/instagram.svg') }}" width="24" height="24"></a></li>
+        <li class="ms-3"><a class="text-body-secondary" href="#"><img src="{{ url_for('static', filename='src/facebook.svg') }}" width="24" height="24"></a></li>
+      </ul>
+    </footer>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.js') }}"></script>
+</body>
+</html>
